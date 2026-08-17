@@ -28,25 +28,7 @@ This project extends the on-device AI pattern I established with my [local SOC l
 
 ## Architecture
 
-```mermaid
-flowchart TD
-    A[User Question] -->|GET /ask| B[FastAPI Endpoint]
-    B --> C[ChromaDB Query]
-    C -->|nomic-embed-text| D[Vector Similarity Search]
-    D --> E[Retrieve Top-K Chunks]
-    E --> F[Augment Prompt with Context]
-    F -->|ollama.chat| G[Llama 3.1 8B]
-    G --> H[Grounded Answer + Context Used]
-
-    I[profile.txt] -->|POST /documents| J[Chunk by Paragraph]
-    J -->|nomic-embed-text| K[Generate Embeddings]
-    K --> L[(ChromaDB<br/>Persistent Store)]
-    L -.->|where: user_name| D
-
-    style G fill:#0467DF,color:#fff
-    style L fill:#FF6F00,color:#fff
-    style B fill:#009688,color:#fff
-```
+<img width="621" height="853" alt="image" src="https://github.com/user-attachments/assets/2a4cb384-7eea-442d-8369-c1b35648ba75" />
 
 Everything in this diagram — embedding generation, vector storage, and answer generation — runs on-device via Ollama. No data leaves the machine at any stage of the pipeline.
 
