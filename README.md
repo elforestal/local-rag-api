@@ -9,7 +9,7 @@
 ![Llama 3.1](https://img.shields.io/badge/Llama%203.1-8B-0467DF)
 ![Security](https://img.shields.io/badge/Focus-AppSec%20%7C%20Data%20Privacy-critical)
 
-**Project Link:** [View Project](http://nextwork.ai/projects/ai-devops-api)
+**Project Link:** [View Project](https://github.com/elforestal/local-rag-api)
 
 **Author:** Edith Forestal
 **GitHub:** [elforestal](https://github.com/elforestal)
@@ -89,7 +89,8 @@ I asked Llama 3.1 a personal question with no context first, then again with my 
 2. **Augmentation** — inserting that text into the prompt alongside the question
 3. **Generation** — the model producing an answer grounded in that context
 
-> **Screenshot:** `manual-rag-demo.png` — terminal showing Llama 3.1 answering correctly once given context
+<img width="795" height="425" alt="image" src="https://github.com/user-attachments/assets/d5655744-7a6d-4d9f-9dc6-da0c4912c7bf" />
+
 
 ### Comparing the two models
 
@@ -103,7 +104,8 @@ I wrote a personal profile document (`profile.txt`), then built a Python script 
 
 Embeddings are numerical representations of text that capture meaning — similar concepts end up close together in vector space, which is what enables semantic search instead of exact keyword matching.
 
-> **Screenshot:** `knowledge-base-built.png` — terminal confirming chunks loaded and stored
+<img width="623" height="89" alt="image" src="https://github.com/user-attachments/assets/5c0f5f3d-4c4c-4c53-8eff-9ffff28157b0" />
+
 
 ### How semantic search finds relevant chunks
 
@@ -119,7 +121,8 @@ I tested it using FastAPI's built-in Swagger UI — auto-generated interactive d
 
 **Test case:** Asked "What is my name?" — the API returned my name correctly, sourced from the retrieved profile chunk, along with the `context_used` field showing exactly which chunks were retrieved (verifiable, non-black-box output).
 
-> **Screenshot:** `swagger-ask-response.png` — Swagger UI showing the grounded JSON response
+<img width="1038" height="169" alt="image" src="https://github.com/user-attachments/assets/ed7f47e1-bbb3-4c12-87bc-f2898d21b0d8" />
+
 
 ---
 
@@ -132,7 +135,8 @@ Real-world RAG systems almost always serve multiple users or data sources, not a
 
 **Verifying the filter works:** I asked "What are their hobbies?" first with no user filter, then again with `user=Jordan`. The unfiltered query pulled mixed context from both my profile and Jordan's — the AI had no way to know which chunk belonged to which person. The filtered query returned only Jordan's hobbies (rock climbing, cooking, chess), because ChromaDB excluded my chunks from the search before it ran.
 
-> **Screenshot:** `multiuser-filtered-response.png` — Swagger UI showing the correctly filtered response
+<img width="984" height="316" alt="image" src="https://github.com/user-attachments/assets/427f7049-9868-49c8-a78a-507169021736" />
+
 
 ---
 
