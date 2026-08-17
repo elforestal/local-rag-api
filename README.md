@@ -1,6 +1,7 @@
-<img src="https://cdn.prod.website-files.com/677c400686e724409a5a7409/6790ad949cf622dc8dcd9fe4_nextwork-logo-leather.svg" alt="NextWork" width="300" />
+<img width="960" height="540" alt="tyu" src="https://github.com/user-attachments/assets/a4099bd9-e2b7-4735-b707-6b205f84fb09" />
 
-# 🔍 Local RAG API with FastAPI, ChromaDB & Ollama
+
+# 🔍 Local AI RAG API with FastAPI, ChromaDB & Ollama
 
 ![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
